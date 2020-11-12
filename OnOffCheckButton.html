@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Button</title>
+    <script src="https://kit.fontawesome.com/ab7283eac0.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+
+
+        body{
+            background: #f8f8ff;
+        }
+        .check-input{
+            position: relative;
+            margin-top:50%;
+            margin-left:50%;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+            background: #fff;
+            cursor: pointer;
+            width: 90px;
+            height: 35px;
+            border-radius: 20px;
+            border: 1px solid #b3b3b3;
+            transition: all ease .3s;
+        }
+
+
+        .check-input:hover{
+            background: #f5f5f5;
+        }
+        .input{
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+        }
+
+        .circle{
+            cursor: pointer;
+            background: red;
+            position: absolute;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            top:1px;
+            left:2px;
+            z-index: 0;
+            width: 33px;
+            height: 33px;
+            border-radius: 50px;
+            transition: all ease .3s;
+        }
+        .circle i{
+            position: relative;
+            transition: .3s;
+            color: #fff;
+        }
+
+
+        .check-input:active .circle{
+            width: 52px;
+        }
+        .input:checked  ~ .circle{
+            left:55px;
+            background: #41ffb4;
+        }
+        .input:checked  ~ .circle i{
+            transform: rotate(540deg);
+        }
+        .check-input:active .input:checked ~ .circle{
+            left: 36px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="check-input">
+    <input class="input" type="checkbox">
+    <div class="circle">
+        <i class="fa fa-angle-right"></i>
+    </div>
+</div>
+
+</body>
+</html>
